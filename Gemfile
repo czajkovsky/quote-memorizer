@@ -4,6 +4,10 @@ gem 'rails', '4.1.0'
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 gem 'sass-rails', '~> 4.0.3'
+
+gem 'haml'
+gem 'bourbon'
+
 gem 'omniauth-facebook'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
