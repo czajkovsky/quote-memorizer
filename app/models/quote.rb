@@ -8,6 +8,8 @@ class Quote
   field :body, type: String
   field :score, type: Integer, default: 0
 
+  validates :body, presence: true, uniqueness: true
+
   def has_user_voted? dir, user
     votes_collection = dir == :up ? votes.up : votes.down
     votes_collection.map{ |v| v.user_id }.include?(user.id)

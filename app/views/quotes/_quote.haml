@@ -7,7 +7,6 @@
   .row
     .columns.medium-12
       %p.details
-        %span
         = link_to 'Up!', up_quote_votes_path(q), method: :post, class: 'button tiny success radius' unless q.has_user_voted?(:up, current_user)
         = link_to 'Down!', down_quote_votes_path(q), method: :post, class: 'button tiny alert radius' unless q.has_user_voted?(:down, current_user)
         %span
