@@ -1,0 +1,24 @@
+development:
+  sessions:
+    default:
+      database: quote_memorizer_development
+      hosts:
+        - localhost:27017
+      options:
+test:
+  sessions:
+    default:
+      database: quote_memorizer_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0
+production:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true

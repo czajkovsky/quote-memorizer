@@ -15,7 +15,6 @@
 /log/*.log
 /tmp
 
-config/mongoid.yml
 config/application.yml
 
 # Ignore application configuration
