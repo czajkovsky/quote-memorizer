@@ -1,7 +1,7 @@
 class QuotesController < ApplicationController
 
   before_filter :authenticate!
-  expose(:quotes)
+  expose(:quotes) { Quote.fresh }
   expose(:quote, attributes: :permitted_params)
 
   def create

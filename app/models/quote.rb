@@ -8,6 +8,8 @@ class Quote
   field :body, type: String
   field :score, type: Integer, default: 0
 
+  scope :fresh, -> { order_by('created_at desc') }
+
   validates :body, presence: true, uniqueness: true
 
   def has_user_voted? dir, user
