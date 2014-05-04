@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
-  get 'unauthenticated', to: 'pages#unauthenticated'
+  get 'start', to: 'pages#start'
 
   root to: 'quotes#index'
 
