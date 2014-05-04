@@ -14,7 +14,7 @@ class QuotesController < ApplicationController
   end
 
   def update
-    if quotes.save
+    if quote.save
       redirect_to quotes_path
     else
       render :edit

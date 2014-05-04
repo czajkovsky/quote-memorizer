@@ -17,4 +17,8 @@ class Quote
     votes_collection.map{ |v| v.user_id }.include?(user.id)
   end
 
+  def is_created_by_user? user
+    creator == user
+  end
+
 end
