@@ -6,6 +6,7 @@ class QuotesController < ApplicationController
 
   def create
     if quote.save
+      assign_creator(quote)
       redirect_to quotes_path
     else
       render :new
@@ -29,6 +30,10 @@ class QuotesController < ApplicationController
 
   def permitted_params
     params.require(:quote).permit(:body)
+  end
+
+  def assign_creator(quote)
+    quote.update_attributes(creator_id: current_user.id)
   end
 
 end

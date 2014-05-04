@@ -1,4 +1,16 @@
 .quote
   .row
-    .columns.large12.panel
-      = q.body
+    .columns.medium-12
+      %code
+        .panel.radius
+          = q.body
+  .row
+    .columns.medium-12
+      %p.details
+        = link_to 'Up!', '#', class: 'button tiny success radius'
+        = link_to 'Down!', '#', class: 'button tiny alert radius'
+        %span
+          Added
+          %strong #{time_ago_in_words(q.created_at)} ago
+          by
+          %strong= q.creator.name

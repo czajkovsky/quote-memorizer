@@ -2,6 +2,8 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  has_many :quotes
+
   field :provider, type: String
   field :uid, type: String
   field :name, type: String, default: ''

@@ -9,6 +9,7 @@ gem 'sass-rails', '~> 4.0.3'
 
 gem 'haml'
 gem 'bourbon'
+gem 'modernizr-rails'
 
 gem 'omniauth-facebook'
 gem 'uglifier', '>= 1.3.0'
