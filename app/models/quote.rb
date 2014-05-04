@@ -6,5 +6,6 @@ class Quote
   has_many :votes
 
   field :body, type: String
+  field :score, type: Integer, default: 0
 
 end

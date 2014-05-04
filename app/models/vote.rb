@@ -8,13 +8,17 @@ class Vote
 
   field :up, type: Boolean
 
-  # after_save :count_votes
+  scope :up, -> { where(up: true) }
+  scope :down, -> { where(up: false) }
 
-  # private
 
-  # def count_votes
-  #   quote.score = quote.votes.up.count
-  #   pong.save
-  # end
+  after_save :count_votes
+
+  private
+
+  def count_votes
+    quote.score = quote.votes.count - 2 * quote.votes.down.count
+    quote.save
+  end
 
 end
