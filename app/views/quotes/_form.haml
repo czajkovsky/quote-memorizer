@@ -1,3 +1,6 @@
-= simple_form_for quote do |f|
-  = f.input :body
-  = f.button :submit, class: 'btn btn-success'
+.quote
+  .row
+    .columns.large12.panel
+      = simple_form_for quote do |f|
+        = f.input :body, as: 'text', input_html: { rows: '10' }
+        = f.button :submit, class: 'small radius'
