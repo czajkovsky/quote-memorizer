@@ -3,6 +3,7 @@ class User
   include Mongoid::Timestamps
 
   has_many :quotes
+  has_many :votes
 
   field :provider, type: String
   field :uid, type: String

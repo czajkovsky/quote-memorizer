@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
   get 'start', to: 'pages#start'
   get 'folks', to: 'users#index'
-  resources :quotes
+  resources :quotes do
+    resources :votes, only: [] do
+      collection do
+        post :up
+        post :down
+      end
+    end
+  end
 
   root to: 'quotes#index'
 

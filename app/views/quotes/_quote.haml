@@ -7,8 +7,8 @@
   .row
     .columns.medium-12
       %p.details
-        = link_to 'Up!', '#', class: 'button tiny success radius'
-        = link_to 'Down!', '#', class: 'button tiny alert radius'
+        = link_to 'Up!', up_quote_votes_path(q), method: :post, class: 'button tiny success radius'
+        = link_to 'Down!', down_quote_votes_path(q), method: :post, class: 'button tiny alert radius'
         %span
           Added
           %strong #{time_ago_in_words(q.created_at)} ago
