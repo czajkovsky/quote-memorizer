@@ -8,6 +8,8 @@
       %tbody
         - users.each do |u|
           %tr
-            %td= u.name
+            %td
+              = image_tag u.photo(50)
+              = u.name
 
 
