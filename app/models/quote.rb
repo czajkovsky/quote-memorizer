@@ -1,6 +1,6 @@
 class Quote
   include Mongoid::Document
 
-  field :body, type: String, default: ''
+  field :body, type: String
 
 end
