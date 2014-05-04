@@ -1,0 +1,6 @@
+#nav
+  - if current_user
+    Signed in as
+    %strong= current_user.name
+  - else
+    = link_to 'Sign in with Facebook', '/auth/facebook'

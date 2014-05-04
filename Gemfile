@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
-gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson'
+gem 'bson_ext'
 
 gem 'sass-rails', '~> 4.0.3'
 
@@ -17,3 +19,4 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'figaro'
+gem 'pry'
