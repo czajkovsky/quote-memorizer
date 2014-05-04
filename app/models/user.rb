@@ -11,6 +11,7 @@ class User
   field :oauth_token, type: String
   field :oauth_expires_at, type: DateTime
   field :image_url, type: String
+  field :admin, type: Boolean, default: false
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
