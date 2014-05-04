@@ -25,3 +25,4 @@ gem 'pry'
 gem 'decent_exposure'
 gem 'decent_decoration'
 gem 'foundation-rails'
+gem 'rails_12factor', group: :production
