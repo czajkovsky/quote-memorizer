@@ -1,6 +1,11 @@
 .quote
   .row
     .columns.medium-12
+      %h4
+        = "##{i}"
+        %small= pluralize(q.score, 'point')
+  .row
+    .columns.medium-12
       %code
         .panel.radius
           = q.body

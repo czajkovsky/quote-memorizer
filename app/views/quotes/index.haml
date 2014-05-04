@@ -1,2 +1,2 @@
-- quotes.each do |quote|
-  = render 'quote', q: quote
+- quotes.each_with_index do |quote, i|
+  = render 'quote', q: quote, i: i + 1

@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
 
   before_filter :authenticate!
+  before_filter :check_credentials, only: [:edit, :destroy]
   expose(:quotes) { Quote.fresh }
   expose(:quote, attributes: :permitted_params)
 
@@ -34,6 +35,12 @@ class QuotesController < ApplicationController
 
   def assign_creator(quote)
     quote.update_attributes(creator_id: current_user.id)
+  end
+
+  def check_credentials
+    unless admin? or quote.is_created_by_user?(current_user)
+      redirect_to quotes_path, notice: "Sorry, you can't do this!"
+    end
   end
 
 end
