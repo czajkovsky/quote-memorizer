@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   get 'start', to: 'pages#start'
+  get 'folks', to: 'users#index'
   resources :quotes
 
   root to: 'quotes#index'

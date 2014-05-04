@@ -1,0 +1,13 @@
+.row
+  .medium-6.columns
+    %table
+      %thead
+        %tr
+          %th{ width: 200 }
+            Name
+      %tbody
+        - users.each do |u|
+          %tr
+            %td= u.name
+
+
