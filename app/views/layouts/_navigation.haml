@@ -1,4 +1,17 @@
-#nav
+%nav.top-bar{ data: { topbar: "" } }
+  %ul.title-area
+    %li.name
+      %h1= link_to 'Wódka Mocni Poznań', root_path
+    %li.toggle-topbar.menu-icon
+      %a{href: "#"}
+        %span Menu
   - if current_user
-    Signed in as
-    %strong= current_user.name
+    %section.top-bar-section
+      %ul.right
+        %li.has-dropdown
+          %a{ href: '#' }= current_user.name
+          %ul.dropdown
+            %li= link_to 'Sign out', signout_path
+      %ul.left
+        %li= link_to 'Quotes', quotes_path
+        %li= link_to 'Add new quote', new_quote_path
