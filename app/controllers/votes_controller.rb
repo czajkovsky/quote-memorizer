@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
 
+  before_filter :authenticate!
   expose(:quote) { Quote.find params[:quote_id] }
   expose(:vote) { current_user.votes.find_or_initialize_by(quote_id: quote.id) }
 
